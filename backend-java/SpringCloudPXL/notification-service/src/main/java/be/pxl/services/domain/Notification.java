@@ -7,7 +7,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name="notification")
+//@Table(name="notification")
 @Data
 @Builder
 @NoArgsConstructor
@@ -18,9 +18,9 @@ public class Notification {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @Column(name = "sender")
+    //@Column(name = "sender")
     private String from;
-    @Column(name = "recipient")
+    //@Column(name = "recipient")
     private String to;
     private String subject;
     private String message;
