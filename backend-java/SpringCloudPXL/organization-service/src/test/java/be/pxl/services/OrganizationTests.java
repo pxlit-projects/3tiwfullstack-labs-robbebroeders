@@ -59,8 +59,8 @@ public class OrganizationTests {
     @Test
     public void shouldCreateOrganization_WhenPostRequestIsValid() throws Exception {
         Organization organization = Organization.builder()
-                .address("Hasselt")
-                .name("Cegeka")
+                .address("Genk")
+                .name("HappIT")
                 .build();
 
         String organizationString = objectMapper.writeValueAsString(organization);
@@ -77,17 +77,18 @@ public class OrganizationTests {
     public void shouldReturnOrganizationById_WhenOrganizationExists() throws Exception {
         Organization savedOrganization = organizationRepository.save(
                 Organization.builder()
-                        .address("Hasselt")
-                        .name("Cegeka")
+                        .address("Genk")
+                        .name("HappIT")
                         .build()
         );
 
         mockMvc.perform(MockMvcRequestBuilders.get("/api/organization/" + savedOrganization.getId()))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$.name").value("Cegeka"))
-                .andExpect(jsonPath("$.address").value("Hasselt"));
+                .andExpect(jsonPath("$.name").value("Genk"))
+                .andExpect(jsonPath("$.address").value("HappIT"));
 
         Optional<Organization> retrievedOrganization = organizationRepository.findById(savedOrganization.getId());
+
         assertTrue(retrievedOrganization.isPresent());
         assertEquals(savedOrganization.getId(), retrievedOrganization.get().getId());
     }
@@ -112,8 +113,8 @@ public class OrganizationTests {
 
         Organization savedOrganization = organizationRepository.save(
                 Organization.builder()
-                        .address("Hasselt")
-                        .name("Cegeka")
+                        .address("Genk")
+                        .name("HappIT")
                         .departments(departments)
                         .build()
         );
@@ -122,6 +123,7 @@ public class OrganizationTests {
                 .andExpect(status().isOk());
 
         Optional<Organization> retrievedOrganization = organizationRepository.findById(savedOrganization.getId());
+
         assertTrue(retrievedOrganization.isPresent());
         assertEquals(savedOrganization.getId(), retrievedOrganization.get().getId());
         assertEquals(2, savedOrganization.getDepartments().size());
@@ -165,8 +167,8 @@ public class OrganizationTests {
 
         Organization savedOrganization = organizationRepository.save(
                 Organization.builder()
-                        .address("Hasselt")
-                        .name("Cegeka")
+                        .address("Genk")
+                        .name("HappIT")
                         .departments(departments)
                         .build()
         );
@@ -175,6 +177,7 @@ public class OrganizationTests {
                 .andExpect(status().isOk());
 
         Optional<Organization> retrievedOrganization = organizationRepository.findById(savedOrganization.getId());
+
         assertTrue(retrievedOrganization.isPresent());
         assertEquals(savedOrganization.getId(), retrievedOrganization.get().getId());
         assertEquals(2, savedOrganization.getDepartments().size());
@@ -201,8 +204,8 @@ public class OrganizationTests {
 
         Organization savedOrganization = organizationRepository.save(
                 Organization.builder()
-                        .address("Hasselt")
-                        .name("Cegeka")
+                        .address("Genk")
+                        .name("HappIT")
                         .employees(employees)
                         .build()
         );
@@ -211,6 +214,7 @@ public class OrganizationTests {
                 .andExpect(status().isOk());
 
         Optional<Organization> retrievedOrganization = organizationRepository.findById(savedOrganization.getId());
+
         assertTrue(retrievedOrganization.isPresent());
         assertEquals(savedOrganization.getId(), retrievedOrganization.get().getId());
         assertEquals(2, savedOrganization.getEmployees().size());
