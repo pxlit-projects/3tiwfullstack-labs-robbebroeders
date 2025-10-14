@@ -1,20 +1,21 @@
 package be.pxl.services.services;
 
 import be.pxl.services.domain.Notification;
-import be.pxl.services.repository.NotificationRepository;
-import lombok.RequiredArgsConstructor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
-
 @Service
-@RequiredArgsConstructor
-public class NotificationService implements INotificationService {
+public class NotificationService {
 
-    private final NotificationRepository notificationRepository;
+    private final Logger log = LoggerFactory.getLogger(NotificationService.class.getName());
 
-    @Override
-    public List<Notification> getAllNotifications() {
-        return notificationRepository.findAll();
+    public void sendMessage(Notification notification) {
+        log.info("Receiving notification...");
+        log.info("Sending...{}", notification.getMessage());
+        log.info("To...{}", notification.getSender());
+//        System.out.println("Receiving notification...");
+//        System.out.println("Sending " + notification.getMessage());
+//        System.out.println("To " + notification.getSender());
     }
 }
