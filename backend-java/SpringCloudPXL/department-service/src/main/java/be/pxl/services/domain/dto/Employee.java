@@ -1,4 +1,4 @@
-package be.pxl.services.domain;
+package be.pxl.services.domain.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -9,9 +9,13 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class DepartmentRequest {
+public class Employee {
 
+    private Long id;
     private Long organizationId;
+    private Long departmentId;
     private String name;
+    private int age;
     private String position;
+
 }

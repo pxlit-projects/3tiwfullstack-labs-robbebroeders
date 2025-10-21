@@ -1,7 +1,7 @@
 package be.pxl.services;
 
 import be.pxl.services.domain.Department;
-import be.pxl.services.domain.Employee;
+import be.pxl.services.domain.dto.Employee;
 import be.pxl.services.repository.DepartmentRepository;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.AfterEach;

@@ -1,6 +1,8 @@
 package be.pxl.services.services;
 
 import be.pxl.services.domain.*;
+import be.pxl.services.domain.dto.DepartmentRequest;
+import be.pxl.services.domain.dto.DepartmentResponse;
 import be.pxl.services.exception.NotFoundException;
 import be.pxl.services.repository.DepartmentRepository;
 import lombok.RequiredArgsConstructor;

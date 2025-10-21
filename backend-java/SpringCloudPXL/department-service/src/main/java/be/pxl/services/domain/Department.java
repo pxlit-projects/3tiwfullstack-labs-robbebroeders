@@ -1,12 +1,12 @@
 package be.pxl.services.domain;
 
+import be.pxl.services.domain.dto.Employee;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Entity

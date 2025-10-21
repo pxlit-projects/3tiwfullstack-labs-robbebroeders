@@ -1,7 +1,7 @@
 package be.pxl.services.controller;
 
-import be.pxl.services.domain.DepartmentRequest;
-import be.pxl.services.domain.DepartmentResponse;
+import be.pxl.services.domain.dto.DepartmentRequest;
+import be.pxl.services.domain.dto.DepartmentResponse;
 import be.pxl.services.services.IDepartmentService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
