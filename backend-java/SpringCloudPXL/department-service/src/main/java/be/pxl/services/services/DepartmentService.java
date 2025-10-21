@@ -1,5 +1,6 @@
 package be.pxl.services.services;
 
+import be.pxl.services.client.EmployeeClient;
 import be.pxl.services.domain.*;
 import be.pxl.services.domain.dto.DepartmentRequest;
 import be.pxl.services.domain.dto.DepartmentResponse;
@@ -15,6 +16,7 @@ import java.util.List;
 public class DepartmentService implements IDepartmentService {
 
     private final DepartmentRepository departmentRepository;
+    private final EmployeeClient employeeClient;
 
     @Override
     public List<Department> getAllDepartments() {
@@ -52,6 +54,14 @@ public class DepartmentService implements IDepartmentService {
         if (departments.isEmpty()) {
             throw new NotFoundException("No departments with organizationId [" + organizationId + "]");
         }
+//        for (Department department : departments) {
+//            department.setEmployees(employeeClient.getEmployeesByDepartment(department.getId()));
+//        }
+        departments.parallelStream()
+                .forEach(department ->
+                        department.setEmployees(employeeClient.getEmployeesByDepartment(department.getId()))
+                );
+
         return departments.stream().map(this::mapToDepartmentResponseWithEmployees).toList();
     }
 
