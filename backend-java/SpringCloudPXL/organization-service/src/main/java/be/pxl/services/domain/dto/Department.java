@@ -1,6 +1,6 @@
-package be.pxl.services.domain;
+package be.pxl.services.domain.dto;
 
-import jakarta.persistence.Transient;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -12,10 +12,13 @@ import java.util.List;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class OrganizationResponse {
+public class Department {
 
+    private Long id;
+    private Long organizationId;
     private String name;
-    private String address;
+    @Transient
     private List<Employee> employees;
-    private List<Department> departments;
+    private String position;
+
 }

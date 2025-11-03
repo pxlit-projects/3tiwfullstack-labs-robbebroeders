@@ -1,7 +1,7 @@
 package be.pxl.services;
 
-import be.pxl.services.domain.Department;
-import be.pxl.services.domain.Employee;
+import be.pxl.services.domain.dto.Department;
+import be.pxl.services.domain.dto.Employee;
 import be.pxl.services.domain.Organization;
 import be.pxl.services.repository.OrganizationRepository;
 import com.fasterxml.jackson.databind.ObjectMapper;

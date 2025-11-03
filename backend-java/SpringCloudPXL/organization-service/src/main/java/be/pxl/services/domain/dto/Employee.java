@@ -1,24 +1,21 @@
-package be.pxl.services.domain;
+package be.pxl.services.domain.dto;
 
-import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.List;
-
 @Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class Department {
+public class Employee {
 
     private Long id;
     private Long organizationId;
+    private Long departmentId;
     private String name;
-    @Transient
-    private List<Employee> employees;
+    private int age;
     private String position;
 
 }

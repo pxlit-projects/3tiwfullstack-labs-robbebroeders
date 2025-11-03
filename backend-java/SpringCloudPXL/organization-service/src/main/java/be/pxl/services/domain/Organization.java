@@ -1,5 +1,7 @@
 package be.pxl.services.domain;
 
+import be.pxl.services.domain.dto.Department;
+import be.pxl.services.domain.dto.Employee;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;

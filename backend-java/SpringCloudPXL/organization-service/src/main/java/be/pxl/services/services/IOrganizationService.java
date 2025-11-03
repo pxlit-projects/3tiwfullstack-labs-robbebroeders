@@ -1,6 +1,6 @@
 package be.pxl.services.services;
 
-import be.pxl.services.domain.OrganizationResponse;
+import be.pxl.services.domain.dto.OrganizationResponse;
 
 public interface IOrganizationService {
     OrganizationResponse findOrganizationById(Long organizationId);
