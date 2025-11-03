@@ -1,4 +1,6 @@
 <configuration>
+    <conversionRule conversionWord="clr"
+                    class="org.springframework.boot.logging.logback.ColorConverter"/>
 
     <!-- Define colorized pattern for console output -->
     <property name="CONSOLE_LOG_PATTERN"
