@@ -41,7 +41,7 @@ public class DepartmentService implements IDepartmentService {
 
     @Override
     public List<DepartmentResponse> findDepartmentsByOrganization(Long organizationId) {
-        List<Department> departments = departmentRepository.findDepartmentByOrganizationId(organizationId).stream().toList();
+        List<Department> departments = departmentRepository.findDepartmentsByOrganizationId(organizationId).stream().toList();
         if (departments.isEmpty()) {
             throw new NotFoundException("No departments with organizationId [" + organizationId + "]");
         }
@@ -50,7 +50,7 @@ public class DepartmentService implements IDepartmentService {
 
     @Override
     public List<DepartmentResponse> findDepartmentsByOrganizationWithEmployees(Long organizationId) {
-        List<Department> departments = departmentRepository.findDepartmentByOrganizationId(organizationId).stream().toList();
+        List<Department> departments = departmentRepository.findDepartmentsByOrganizationId(organizationId).stream().toList();
         if (departments.isEmpty()) {
             throw new NotFoundException("No departments with organizationId [" + organizationId + "]");
         }

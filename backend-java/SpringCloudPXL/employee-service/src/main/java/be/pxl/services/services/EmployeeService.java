@@ -59,6 +59,7 @@ public class EmployeeService implements IEmployeeService {
 
     @Override
     public List<EmployeeResponse> findEmployeeByOrganization(Long organizationId) {
+
         List<Employee> employees = employeeRepository.findByOrganizationId(organizationId).stream().toList();
         if (employees.isEmpty()) {
             throw new NotFoundException("No employees with organizationId [" + organizationId + "]");
